@@ -1,4 +1,4 @@
-echo "Loaded /h/.bashrc"
+echo "Loaded .bashrc"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -121,7 +121,10 @@ fi
 
 unset env
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export PATH="$HOME/local/bin:$PATH"
 export PATH=`echo $PATH | sed -e "s/:\/home\/kaveman\/bin\/$//"`
+
+if [ -x rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
