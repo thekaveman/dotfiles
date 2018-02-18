@@ -110,12 +110,14 @@ if ! agent_is_running; then
     agent_load_env
 fi
 
-# if your keys are not stored in ~/.ssh/id_rsa.pub or ~/.ssh/id_dsa.pub, you'll need
-# to paste the proper path after ssh-add
 if ! agent_is_running; then
     agent_start
-    ssh-add
-elif ! agent_has_keys; then
+fi
+
+# if your keys are not stored in ~/.ssh/id_rsa.pub or ~/.ssh/id_dsa.pub, you'll need
+# to paste the proper path after ssh-add
+
+if ! agent_has_keys; then
     ssh-add
 fi
 
