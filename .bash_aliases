@@ -11,6 +11,7 @@ alias cls='clear'
 
 alias gits='git status'
 alias gita='git add'
+alias gitam='git commit --amend'
 alias gitb='git branch'
 alias gitc='git commit'
 alias gitcb='git checkout -b'
