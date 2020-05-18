@@ -1,0 +1,28 @@
+[user]
+    name = Kegan Maher
+    email = kegan.maher@gmail.com
+
+[github]
+    user = thekaveman
+
+[core]
+    excludesfile = ~/.gitignore_global
+    filemode = false
+    symlinks = true
+    untrackedCache = true
+
+[color]
+    ui = auto
+
+[grep]
+    lineNumber = true
+
+[help]
+    autocorrect = 1
+
+[fetch]
+    prune = true
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+    path = ~/.gitconfig_local

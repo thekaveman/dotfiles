@@ -1,0 +1,10 @@
+__pycache__
+.vscode
+.vs
+[Bb]in
+node_modules
+[Oo]bj
+packages
+
+*.user
+npm-debug.log
