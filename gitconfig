@@ -11,9 +11,6 @@
     symlinks = true
     untrackedCache = true
 
-[color]
-    ui = auto
-
 [grep]
     lineNumber = true
 
