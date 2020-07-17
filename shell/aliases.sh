@@ -18,7 +18,6 @@ alias mv='mv -i'
 # Cmd-style clear
 alias cls='clear'
 
-
 # git related
 alias gita='git add'
 alias gitb='git branch'
@@ -26,6 +25,9 @@ alias gitc='git commit'
 alias gitcan='git commit --amend --no-edit'
 alias gitcb='git checkout -b'
 alias gitcm='git commit -m'
+alias gitd='git diff'
+alias gitf='git fetch --tags --prune'
+alias gitfa='git fetch --all --tags --prune'
 alias gitl='git log --graph --oneline --all'
 alias gitps='git push'
 alias gitpl='git pull'

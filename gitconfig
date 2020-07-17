@@ -1,3 +1,15 @@
+[alias]
+    amend = commit --amend --no-edit
+    diffs = diff --staged
+    ff = merge --ff-only
+    pullrb = pull --rebase
+    rbi = rebase -i
+    reword = commit --amend
+    save = commit -a -m "save"
+    unstage = restore --staged
+    update-submodules = submodule update --init --recursive
+    upgrade-submodules = submodule update --init --remote
+
 [user]
     name = Kegan Maher
     email = kegan.maher@gmail.com
