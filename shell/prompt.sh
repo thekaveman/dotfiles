@@ -1,5 +1,11 @@
 # bring in the git-prompt helper
-source $(grep -lors -m 1 --exclude-dir={proc,tmp} "__git_ps1" / | head -1)
+if [ -f "/usr/lib/git-core/git-sh-prompt" ]; then
+    # debian
+    source "/usr/lib/git-core/git-sh-prompt"
+elif [ -f "/etc/profile.d/git-prompt.sh" ]; then
+    # git for windows
+    source "/etc/profile.d/git-prompt.sh"
+fi
 
 # user@machine [system] ~/local/path [(git information)]
 # $ <cursor>
