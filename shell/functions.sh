@@ -43,5 +43,5 @@ ps0() {
 }
 
 ps1() {
-  source "$DOTFILES_DIR"/shell/prompt.sh
+  source ~/.shell/prompt.sh
 }
