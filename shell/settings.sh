@@ -30,8 +30,3 @@ shopt -s nocaseglob
 
 # Do not autocomplete when accidentally pressing Tab on an empty line
 shopt -s no_empty_cmd_completion
-
-# enable programmable completion features
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    source /etc/bash_completion
-fi
