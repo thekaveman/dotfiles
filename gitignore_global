@@ -6,5 +6,5 @@ node_modules
 [Oo]bj
 packages
 
+*.log
 *.user
-npm-debug.log
