@@ -22,6 +22,7 @@
     filemode = false
     symlinks = true
     untrackedCache = true
+    editor = code --wait
 
 [grep]
     lineNumber = true
