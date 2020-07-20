@@ -24,6 +24,14 @@
     untrackedCache = true
     editor = code --wait
 
+[color]
+    diff = auto
+
+[color "diff"]
+    frag = magenta
+    old = red bold
+    new = green bold
+
 [grep]
     lineNumber = true
 
@@ -36,3 +44,5 @@
 # Allow local customizations in the .gitconfig_local file
 [include]
     path = ~/.gitconfig_local
+[credential]
+	helper = "!f() { /root/.vscode-server/bin/17299e413d5590b14ab0340ea477cdd86ff13daf/node /tmp/vscode-remote-containers-0909bcb2d2ae538829fe762b28b0ba141928ad53.js $*; }; f"
