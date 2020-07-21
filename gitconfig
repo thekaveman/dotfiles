@@ -26,6 +26,7 @@
 
 [color]
     diff = auto
+    ui = auto
 
 [color "diff"]
     frag = magenta
