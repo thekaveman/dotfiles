@@ -16,8 +16,8 @@
     ~/.shell:
     ~/.vimrc:
     ~/.config/Code/User/settings.json:
-      if: '[["$OSTYPE" != "msys" && "$OSTYPE" != "cygwin"]]'
-      source: vscode/settings.json
+      if: '[ "$(uname)" == "Linux" ]'
+      path: vscode/settings.json
     ~/AppData/Roaming/Code/User/settings.json:
-      source: vscode/settings.json
-      if: '[["$OSTYPE" == "msys" || "$OSTYPE" == "cygwin"]]'
+      if: '[ "$(uname)" != "Linux" ]'
+      path: vscode/settings.json
