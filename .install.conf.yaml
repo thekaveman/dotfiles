@@ -1,6 +1,6 @@
 - defaults:
     link:
-      if: '[ "$(uname)" == "Linux" ]'
+      if: '[ "$OSTYPE" == "linux-gnu"* ]'
       create: true
       force: true
       relink: true
