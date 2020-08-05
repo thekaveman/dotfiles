@@ -1,5 +1,6 @@
 - defaults:
     link:
+      if: '[ "$(uname)" == "Linux" ]'
       create: true
       force: true
       relink: true
@@ -16,8 +17,10 @@
     ~/.shell:
     ~/.vimrc:
     ~/.config/Code/User/settings.json:
-      if: '[ "$(uname)" == "Linux" ]'
       path: vscode/settings.json
-    ~/AppData/Roaming/Code/User/settings.json:
-      if: '[ "$(uname)" != "Linux" ]'
-      path: vscode/settings.json
+
+- shell:
+  -
+    command: bash shell/msys.sh
+    stderr: true
+    stdout: true
