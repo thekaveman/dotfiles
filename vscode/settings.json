@@ -1,0 +1,30 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.renderWhitespace": "all",
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "editor.minimap.enabled": true,
+    "editor.rulers": [
+        80,
+        127
+    ],
+    "breadcrumbs.enabled": true,
+    "terminal.integrated.shell": {
+        "windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "linux": "/bin/bash"
+    },
+    "dotfiles.installCommand": "~/.dotfiles/install",
+    "dotfiles.repository": "thekaveman/dotfiles",
+    "dotfiles.targetPath": "~/.dotfiles",
+    "explorer.confirmDelete": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "extensions.ignoreRecommendations": false,
+    "editor.columnSelection": false,
+    "explorer.confirmDragAndDrop": false,
+    "remote.extensionKind": {
+        "ms-azuretools.vscode-docker": "workspace"
+    }
+}
