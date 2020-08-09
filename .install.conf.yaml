@@ -7,13 +7,13 @@
 - clean: ['~']
 
 - link:
+    ~/.shell:
     ~/.bash_logout:
     ~/.bash_profile:
     ~/.bashrc:
     ~/.gitattributes:
     ~/.gitconfig:
     ~/.gitignore_global:
-    ~/.shell:
     ~/.vimrc:
     ~/.config/Code/User/settings.json:
       path: vscode/settings.json

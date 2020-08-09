@@ -1,5 +1,5 @@
 # default editor
-export EDITOR="nano"
+export EDITOR="code"
 
 # colors
 export CLICOLOR=1
