@@ -40,13 +40,14 @@ agent_start() {
 }
 
 if ! agent_is_running; then
-    agent_load_env
     agent_start
+else
+    agent_load_env
 fi
 
 # if keys are not stored in ~/.ssh/id_rsa.pub or ~/.ssh/id_dsa.pub,
 # paste the proper path after ssh-add
-if ! agent_is_running; then
+if ! agent_has_keys; then
     ssh-add
 fi
 
