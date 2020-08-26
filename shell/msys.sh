@@ -13,5 +13,5 @@ if [[ "$OSTYPE" == "msys" ]]; then
     cp vimrc ~/.vimrc
     cp vscode/settings.json ~/AppData/Roaming/Code/User/settings.json
 
-    source ~/.shell/sshagent.sh
+    echo "source ~/.shell/sshagent.sh" >> ~/.bashrc
 fi
