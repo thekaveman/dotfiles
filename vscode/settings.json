@@ -21,6 +21,7 @@
     "*.json": "jsonc"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "python.analysis.diagnosticMode": "workspace",
   "python.languageServer": "Pylance",
   "python.linting.pylintEnabled": false,
   "python.linting.pycodestyleEnabled": false,
@@ -29,6 +30,7 @@
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "bash"
@@ -51,7 +53,6 @@
       "source": "Git Bash"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true
 }
