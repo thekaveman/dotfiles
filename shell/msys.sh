@@ -7,6 +7,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
     cp bash_logout ~/.bash_logout
     cp bash_profile ~/.bash_profile
     cp bashrc ~/.bashrc
+    cp editorconfig ~/.editorconfig
     cp gitattributes ~/.gitattributes
     cp gitconfig ~/.gitconfig
     cp gitignore_global ~/.gitignore_global
