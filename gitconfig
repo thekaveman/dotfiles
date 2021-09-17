@@ -42,6 +42,12 @@
 [fetch]
     prune = true
 
+[pull]
+    rebase = true
+
+[rebase]
+    autoStash = true
+
 # Allow local customizations in the .gitconfig_local file
 [include]
     path = ~/.gitconfig_local
