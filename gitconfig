@@ -18,11 +18,12 @@
     user = thekaveman
 
 [core]
+    editor = code --wait
     excludesfile = ~/.gitignore_global
     filemode = false
+    fsMonitor = false
     symlinks = true
     untrackedCache = true
-    editor = code --wait
 
 [color]
     diff = auto
