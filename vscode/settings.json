@@ -3,13 +3,12 @@
   "dotfiles.installCommand": "~/.dotfiles/install",
   "dotfiles.repository": "thekaveman/dotfiles",
   "dotfiles.targetPath": "~/.dotfiles",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.columnSelection": false,
+  "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
   "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    80,
-    127
-  ],
+  "editor.rulers": [80, 127],
   "explorer.confirmDelete": true,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": false,
@@ -20,6 +19,11 @@
     "*ignore*": "ignore",
     "*.json": "jsonc"
   },
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.analysis.diagnosticMode": "workspace",
   "python.languageServer": "Pylance",
