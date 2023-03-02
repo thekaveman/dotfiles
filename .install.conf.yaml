@@ -4,7 +4,7 @@
       force: true
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.shell:
@@ -20,7 +20,10 @@
     ~/.config/flake8: flake8
 
 - shell:
-  -
-    command: bash shell/msys.sh
-    stderr: true
-    stdout: true
+    - command: bash shell/msys.sh
+      stderr: true
+      stdout: true
+
+    - command: bash vscode/install-extensions.sh
+      stderr: true
+      stdout: true
