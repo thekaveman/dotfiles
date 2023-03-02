@@ -12,6 +12,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
     cp gitattributes ~/.gitattributes
     cp gitconfig ~/.gitconfig
     cp gitignore_global ~/.gitignore_global
+    cp minttyrc ~/.minttyrc
     cp vimrc ~/.vimrc
     cp vscode/settings.json ~/AppData/Roaming/Code/User/settings.json
 

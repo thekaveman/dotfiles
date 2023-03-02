@@ -1,0 +1,6 @@
+MiddleClickAction=void
+RightClickAction=paste
+Columns=150
+RewrapOnResize=yes
+Transparency=low
+OpaqueWhenFocused=yes
