@@ -31,6 +31,11 @@
   "python.linting.pycodestyleEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
