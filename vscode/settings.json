@@ -62,7 +62,7 @@
       "source": "Git Bash"
     }
   },
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Default Dark+",
   "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true
 }
