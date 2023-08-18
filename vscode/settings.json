@@ -1,7 +1,7 @@
 {
   "breadcrumbs.enabled": true,
-  "dotfiles.installCommand": "~/.dotfiles/install",
-  "dotfiles.repository": "thekaveman/dotfiles",
+  "dotfiles.installCommand": "./install",
+  "dotfiles.repository": "https://github.com/thekaveman/dotfiles.git",
   "dotfiles.targetPath": "~/.dotfiles",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.columnSelection": false,
