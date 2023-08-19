@@ -1,7 +1,9 @@
 [alias]
+    autosquash = rebase -i --autosquash
     amend = commit --amend --no-edit
     diffs = diff --staged
     ff = merge --ff-only
+    fix = commit --fixup
     pullrb = pull --rebase
     rbi = rebase -i
     reword = commit --amend
