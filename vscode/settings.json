@@ -27,14 +27,11 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.analysis.diagnosticMode": "workspace",
   "python.languageServer": "Pylance",
-  "python.linting.pylintEnabled": false,
-  "python.linting.pycodestyleEnabled": false,
-  "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true,
-  "python.testing.pytestEnabled": true,
-  "python.testing.unittestEnabled": false,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
