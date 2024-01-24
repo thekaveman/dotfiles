@@ -38,4 +38,6 @@ alias sshkg='ssh-keygen -t rsa -b 4096 -C'
 
 alias tarx='tar xzvf'
 
+alias tf='terraform'
+
 alias vimp='vim -p'
