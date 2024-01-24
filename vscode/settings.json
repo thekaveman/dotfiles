@@ -4,12 +4,11 @@
   "dotfiles.repository": "https://github.com/thekaveman/dotfiles.git",
   "dotfiles.targetPath": "~/.dotfiles",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.columnSelection": false,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 127],
-  "explorer.confirmDelete": true,
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": false,
   "files.associations": {
@@ -30,7 +29,7 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   },
   "remote.extensionKind": {
@@ -59,7 +58,10 @@
       "source": "Git Bash"
     }
   },
-  "workbench.colorTheme": "Default Dark+",
   "workbench.iconTheme": "vscode-icons",
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.zoomLevel": 5,
+  "svg.preview.mode": "svg",
+  "workbench.colorTheme": "Default Dark+",
+  "remote.autoForwardPortsSource": "hybrid"
 }
