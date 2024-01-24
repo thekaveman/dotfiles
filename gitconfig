@@ -56,3 +56,5 @@
     path = ~/.gitconfig_local
 [credential]
     credentialStore = cache
+[credential "https://dev.azure.com"]
+    useHttpPath = true
