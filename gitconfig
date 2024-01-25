@@ -56,5 +56,6 @@
     path = ~/.gitconfig_local
 [credential]
     credentialStore = cache
+    helper = /home/kegan/.dotnet/tools/git-credential-manager
 [credential "https://dev.azure.com"]
     useHttpPath = true
