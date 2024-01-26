@@ -60,7 +60,7 @@
   },
   "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
-  "window.zoomLevel": 5,
+  "window.zoomLevel": 3,
   "svg.preview.mode": "svg",
   "workbench.colorTheme": "Default Dark+",
   "remote.autoForwardPortsSource": "hybrid"
