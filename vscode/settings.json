@@ -25,6 +25,7 @@
   "files.trimTrailingWhitespace": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.analysis.diagnosticMode": "workspace",
+  "python.experiments.optOutFrom": ["pythonTestAdapter"],
   "python.languageServer": "Pylance",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
