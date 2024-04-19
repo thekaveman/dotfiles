@@ -6,7 +6,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.rulers": [80, 127],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -24,6 +24,11 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "jupyter.askForKernelRestart": false,
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": true
+  },
   "python.analysis.diagnosticMode": "workspace",
   "python.experiments.optOutFrom": ["pythonTestAdapter"],
   "python.languageServer": "Pylance",
@@ -33,10 +38,15 @@
       "source.organizeImports": "explicit"
     }
   },
+  "remote.autoForwardPortsSource": "hybrid",
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
+  "svg.preview.mode": "svg",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.env.linux": {},
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "bash"
@@ -59,10 +69,8 @@
       "source": "Git Bash"
     }
   },
-  "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
   "window.zoomLevel": 3,
-  "svg.preview.mode": "svg",
   "workbench.colorTheme": "Default Dark+",
-  "remote.autoForwardPortsSource": "hybrid"
+  "workbench.iconTheme": "vscode-icons"
 }
