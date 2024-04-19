@@ -43,6 +43,14 @@
             stdout: true
 
 - if:
+    cond: echo "$OSTYPE" | grep linux && ! docker --version
+    met:
+      - shell:
+          - command: bash shell/docker.sh
+            stderr: true
+            stdout: true
+
+- if:
     cond: code -v
     met:
       - shell:
