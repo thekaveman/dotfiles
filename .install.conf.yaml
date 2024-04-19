@@ -35,7 +35,7 @@
             stdout: true
 
 - if:
-    cond: echo "$OSTYPE" | grep linux && ! python --version
+    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! python --version
     met:
       - shell:
           - command: bash shell/python.sh
@@ -43,7 +43,7 @@
             stdout: true
 
 - if:
-    cond: echo "$OSTYPE" | grep linux && ! docker --version
+    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! docker --version
     met:
       - shell:
           - command: bash shell/docker.sh
@@ -51,7 +51,7 @@
             stdout: true
 
 - if:
-    cond: echo "$OSTYPE" | grep linux && ! dotnet --version
+    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! dotnet --version
     met:
       - shell:
           - command: bash shell/dotnet.sh
@@ -59,7 +59,7 @@
             stdout: true
 
 - if:
-    cond: echo "$OSTYPE" | grep linux && ! terraform --version
+    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! terraform --version
     met:
       - shell:
           - command: bash shell/terraform.sh
