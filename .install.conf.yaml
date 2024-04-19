@@ -6,6 +6,11 @@
 
 - clean: ["~"]
 
+- create:
+    - ~/git/cal-itp
+    - ~/git/compiler
+    - ~/git/thekaveman
+
 - link:
     ~/.shell:
     ~/.bash_logout:
