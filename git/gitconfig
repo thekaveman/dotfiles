@@ -57,6 +57,11 @@
 # Allow local customizations in the .gitconfig_local file
 [include]
     path = ~/.gitconfig_local
+
+# Allow personal overrides
+[includeIf "gitdir:~/git/thekaveman/"]
+  path = ~/git/thekaveman/.gitconfig
+
 [credential]
     credentialStore = cache
     helper = /home/kegan/.dotnet/tools/git-credential-manager

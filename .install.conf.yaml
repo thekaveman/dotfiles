@@ -17,9 +17,10 @@
     ~/.bash_profile:
     ~/.bashrc:
     ~/.editorconfig:
-    ~/.gitattributes:
-    ~/.gitconfig:
-    ~/.gitignore_global:
+    ~/.gitattributes: git/gitattributes
+    ~/.gitconfig: git/gitconfig
+    ~/git/thekaveman/.gitconfig: git/thekaveman.gitconfig
+    ~/.gitignore_global: git/gitignore_global
     ~/.minttyrc:
     ~/.vimrc:
     ~/.config/Code/User/settings.json: vscode/settings.json
