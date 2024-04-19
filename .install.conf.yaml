@@ -26,11 +26,18 @@
     ~/.config/Code/User/settings.json: vscode/settings.json
     ~/.config/flake8: flake8
 
-- shell:
-    - command: bash shell/msys.sh
-      stderr: true
-      stdout: true
+- if:
+    cond: echo "$OSTYPE" | grep msys
+    met:
+      - shell:
+          - command: bash shell/msys.sh
+            stderr: true
+            stdout: true
 
-    - command: bash vscode/install-extensions.sh
-      stderr: true
-      stdout: true
+- if:
+    cond: code -v
+    met:
+      - shell:
+          - command: bash vscode/install-extensions.sh
+            stderr: true
+            stdout: true
