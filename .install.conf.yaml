@@ -59,6 +59,14 @@
             stdout: true
 
 - if:
+    cond: echo "$OSTYPE" | grep linux && ! terraform --version
+    met:
+      - shell:
+          - command: bash shell/terraform.sh
+            stderr: true
+            stdout: true
+
+- if:
     cond: code -v
     met:
       - shell:
