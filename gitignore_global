@@ -1,8 +1,11 @@
 __pycache__
 .vs
+.venv
+build
 node_modules
 [Oo]bj
 packages
+venv
 
 *.log
 *.user
