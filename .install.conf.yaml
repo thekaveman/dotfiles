@@ -51,6 +51,14 @@
             stdout: true
 
 - if:
+    cond: echo "$OSTYPE" | grep linux && ! dotnet --version
+    met:
+      - shell:
+          - command: bash shell/dotnet.sh
+            stderr: true
+            stdout: true
+
+- if:
     cond: code -v
     met:
       - shell:
