@@ -9,11 +9,6 @@
 
 - clean: ["~"]
 
-- create:
-    - ~/git/cal-itp
-    - ~/git/compiler
-    - ~/git/thekaveman
-
 - link:
     ~/.shell:
     ~/.bash_logout:
@@ -22,57 +17,54 @@
     ~/.editorconfig:
     ~/.gitattributes: git/gitattributes
     ~/.gitconfig: git/gitconfig
-    ~/git/thekaveman/.gitconfig: git/thekaveman.gitconfig
     ~/.gitignore_global: git/gitignore_global
-    ~/.minttyrc:
-    ~/.vimrc:
     ~/.config/Code/User/settings.json: vscode/settings.json
     ~/.config/flake8: flake8
 
 - if:
     cond: echo "$OSTYPE" | grep msys
     met:
+      - link:
+          ~/.minttyrc:
       - shell:
           - command: bash shell/msys.sh
-            stderr: true
-            stdout: true
 
 - if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! python --version
+    cond: test "$REMOTE_CONTAINERS" != true
     met:
-      - shell:
-          - command: bash shell/python.sh
-            stderr: true
-            stdout: true
-
-- if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! docker --version
-    met:
-      - shell:
-          - command: bash shell/docker.sh
-            stderr: true
-            stdout: true
-
-- if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! dotnet --version
-    met:
-      - shell:
-          - command: bash shell/dotnet.sh
-            stderr: true
-            stdout: true
-
-- if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! terraform --version
-    met:
-      - shell:
-          - command: bash shell/terraform.sh
-            stderr: true
-            stdout: true
+      - create:
+          - ~/git/cal-itp
+          - ~/git/compiler
+          - ~/git/thekaveman
+      - link:
+          ~/git/thekaveman/.gitconfig: git/thekaveman.gitconfig
+          ~/.vimrc:
+      - if:
+          cond: echo "$OSTYPE" | grep linux
+          met:
+            - if:
+                cond: python --version
+                unmet:
+                  - shell:
+                      - command: bash shell/python.sh
+            - if:
+                cond: docker --version
+                unmet:
+                  - shell:
+                      - command: bash shell/docker.sh
+            - if:
+                cond: dotnet --version
+                unmet:
+                  - shell:
+                      - command: bash shell/dotnet.sh
+            - if:
+                cond: terraform --version
+                unmet:
+                  - shell:
+                      - command: bash shell/terraform.sh
 
 - if:
     cond: code -v
     met:
       - shell:
           - command: bash vscode/install-extensions.sh
-            stderr: true
-            stdout: true
