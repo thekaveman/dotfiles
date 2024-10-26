@@ -32,5 +32,6 @@ shopt -s nocaseglob
 shopt -s no_empty_cmd_completion
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
+  export DOCKER_HOST="unix:///Users/kegan/.colima/default/docker.sock"
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi

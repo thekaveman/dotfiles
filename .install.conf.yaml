@@ -75,6 +75,13 @@
                 unmet:
                   - shell:
                       - command: bash brew/python.sh
+            - if:
+                cond: docker --version
+                unmet:
+                  - link:
+                      ~/.docker/config.json: docker/config.osx.json
+                  - shell:
+                      - command: bash brew/docker.sh
 
 - if:
     cond: code -v
