@@ -82,6 +82,11 @@
                       ~/.docker/config.json: docker/config.osx.json
                   - shell:
                       - command: bash brew/docker.sh
+            - if:
+                cond: gcloud --version
+                unmet:
+                  - shell:
+                      - command: bash brew/google.sh
 
 - if:
     cond: code -v
