@@ -18,7 +18,6 @@
     ~/.gitattributes: git/gitattributes
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
-    ~/.config/Code/User/settings.json: vscode/settings.json
     ~/.config/flake8: flake8
 
 - if:
@@ -42,6 +41,8 @@
       - if:
           cond: echo "$OSTYPE" | grep linux
           met:
+            - link:
+                ~/.config/Code/User/settings.json: vscode/settings.json
             - if:
                 cond: python --version
                 unmet:
@@ -87,6 +88,13 @@
                 unmet:
                   - shell:
                       - command: bash brew/google.sh
+            - if:
+                cond: code -v
+                unmet:
+                  - shell:
+                      - command: bash brew/vscode.sh
+                  - link:
+                      "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
 
 - if:
     cond: code -v
