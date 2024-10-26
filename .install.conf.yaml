@@ -70,6 +70,11 @@
                 unmet:
                   - shell:
                       - command: bash brew/install.sh
+            - if:
+                cond: python3 --version
+                unmet:
+                  - shell:
+                      - command: bash brew/python.sh
 
 - if:
     cond: code -v
