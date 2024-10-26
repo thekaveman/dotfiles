@@ -62,6 +62,14 @@
                 unmet:
                   - shell:
                       - command: bash shell/terraform.sh
+      - if:
+          cond: echo "$OSTYPE" | grep darwin
+          met:
+            - if:
+                cond: brew --version
+                unmet:
+                  - shell:
+                      - command: bash brew/install.sh
 
 - if:
     cond: code -v

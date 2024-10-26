@@ -30,3 +30,7 @@ shopt -s nocaseglob
 
 # Do not autocomplete when accidentally pressing Tab on an empty line
 shopt -s no_empty_cmd_completion
+
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
