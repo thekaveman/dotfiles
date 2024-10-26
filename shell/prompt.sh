@@ -5,6 +5,12 @@ if [ -f "/usr/lib/git-core/git-sh-prompt" ]; then
 elif [ -f "/etc/profile.d/git-prompt.sh" ]; then
     # git for windows
     source "/etc/profile.d/git-prompt.sh"
+else
+    TARGET="$HOME/.git-sh-prompt"
+    if [ ! -f "$TARGET" ]; then
+        curl -o "$TARGET" https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion/git-prompt.sh
+    fi
+    source "$TARGET"
 fi
 
 # user@machine [system] ~/local/path [(git information)]
