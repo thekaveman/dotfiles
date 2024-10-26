@@ -3,6 +3,9 @@
       create: true
       force: true
       relink: true
+    shell:
+      stderr: true
+      stdout: true
 
 - clean: ["~"]
 
