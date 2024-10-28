@@ -39,65 +39,65 @@
           ~/git/thekaveman/.gitconfig: git/thekaveman.gitconfig
           ~/.vimrc:
       - if:
-          cond: echo "$OSTYPE" | grep linux
-          met:
-            - link:
-                ~/.config/Code/User/settings.json: vscode/settings.json
-            - if:
-                cond: python --version
-                unmet:
-                  - shell:
-                      - command: bash shell/python.sh
-            - if:
-                cond: docker --version
-                unmet:
-                  - shell:
-                      - command: bash shell/docker.sh
-            - if:
-                cond: dotnet --version
-                unmet:
-                  - shell:
-                      - command: bash shell/dotnet.sh
-            - if:
-                cond: terraform --version
-                unmet:
-                  - shell:
-                      - command: bash shell/terraform.sh
+          cond: brew --version
+          unmet:
+            - shell:
+                - command: bash shell/brew.sh
       - if:
-          cond: echo "$OSTYPE" | grep darwin
-          met:
+          cond: python --version || python3 --version
+          unmet:
+            - shell:
+                - command: bash shell/python.sh
+      - if:
+          cond: docker --version
+          unmet:
+            - shell:
+                - command: bash shell/docker.sh
             - if:
-                cond: brew --version
-                unmet:
+                cond: echo "$OSTYPE" | grep darwin
+                met:
                   - shell:
-                      - command: bash brew/install.sh
-            - if:
-                cond: python3 --version
-                unmet:
-                  - shell:
-                      - command: bash brew/python.sh
-            - if:
-                cond: docker --version
-                unmet:
+                      - command: mkdir -p ~/.docker
                   - link:
                       ~/.docker/config.json: docker/config.osx.json
-                  - shell:
-                      - command: bash brew/docker.sh
-            - if:
-                cond: gcloud --version
-                unmet:
-                  - shell:
-                      - command: bash brew/google.sh
-            - if:
-                cond: code -v
-                unmet:
-                  - shell:
-                      - command: bash brew/vscode.sh
-                  - link:
-                      "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
+      - if:
+          cond: gcloud --version
+          unmet:
+            - shell:
+                - command: bash brew/google.sh
+      - if:
+          cond: dotnet --version
+          unmet:
+            - shell:
+                - command: bash shell/dotnet.sh
+      - if:
+          cond: gcloud --version
+          unmet:
+            - shell:
+                - command: bash shell/google.sh
+      - if:
+          cond: terraform --version
+          unmet:
+            - shell:
+                - command: bash shell/terraform.sh
+      - if:
+          cond: code -v
+          unmet:
+            - shell:
+                - command: bash shell/vscode.sh
 
 - if:
     cond: code -v
     met:
+      - if:
+          cond: echo "$OSTYPE" | grep linux
+          met:
+            - link:
+                ~/.config/Code/User/settings.json: vscode/settings.json
+      - if:
+          cond: echo "$OSTYPE" | grep darwin
+          met:
+            - link:
+                "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
       - shell:
           - command: bash vscode/install-extensions.sh
