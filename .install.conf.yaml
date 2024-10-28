@@ -42,17 +42,17 @@
           cond: brew --version
           unmet:
             - shell:
-                - command: bash shell/brew.sh
+                - command: bash tools/brew.sh
       - if:
           cond: python --version || python3 --version
           unmet:
             - shell:
-                - command: bash shell/python.sh
+                - command: bash tools/python.sh
       - if:
           cond: docker --version
           unmet:
             - shell:
-                - command: bash shell/docker.sh
+                - command: bash tools/docker.sh
             - if:
                 cond: echo "$OSTYPE" | grep darwin
                 met:
@@ -61,30 +61,25 @@
                   - link:
                       ~/.docker/config.json: docker/config.osx.json
       - if:
-          cond: gcloud --version
-          unmet:
-            - shell:
-                - command: bash brew/google.sh
-      - if:
           cond: dotnet --version
           unmet:
             - shell:
-                - command: bash shell/dotnet.sh
+                - command: bash tools/dotnet.sh
       - if:
           cond: gcloud --version
           unmet:
             - shell:
-                - command: bash shell/google.sh
+                - command: bash tools/gcloud.sh
       - if:
           cond: terraform --version
           unmet:
             - shell:
-                - command: bash shell/terraform.sh
+                - command: bash tools/terraform.sh
       - if:
           cond: code -v
           unmet:
             - shell:
-                - command: bash shell/vscode.sh
+                - command: bash tools/vscode.sh
 
 - if:
     cond: code -v
