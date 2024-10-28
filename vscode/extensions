@@ -2,6 +2,7 @@ DavidAnson.vscode-markdownlint
 eamodio.gitlens
 esbenp.prettier-vscode
 mechatroner.rainbow-csv
+ms-azuretools.vscode-docker
 ms-python.black-formatter
 ms-python.isort
 ms-python.flake8

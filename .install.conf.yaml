@@ -3,13 +3,11 @@
       create: true
       force: true
       relink: true
+    shell:
+      stderr: true
+      stdout: true
 
 - clean: ["~"]
-
-- create:
-    - ~/git/cal-itp
-    - ~/git/compiler
-    - ~/git/thekaveman
 
 - link:
     ~/.shell:
@@ -19,57 +17,82 @@
     ~/.editorconfig:
     ~/.gitattributes: git/gitattributes
     ~/.gitconfig: git/gitconfig
-    ~/git/thekaveman/.gitconfig: git/thekaveman.gitconfig
     ~/.gitignore_global: git/gitignore_global
-    ~/.minttyrc:
-    ~/.vimrc:
-    ~/.config/Code/User/settings.json: vscode/settings.json
     ~/.config/flake8: flake8
 
 - if:
     cond: echo "$OSTYPE" | grep msys
     met:
+      - link:
+          ~/.minttyrc:
       - shell:
           - command: bash shell/msys.sh
-            stderr: true
-            stdout: true
 
 - if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! python --version
+    cond: test "$REMOTE_CONTAINERS" != true
     met:
-      - shell:
-          - command: bash shell/python.sh
-            stderr: true
-            stdout: true
-
-- if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! docker --version
-    met:
-      - shell:
-          - command: bash shell/docker.sh
-            stderr: true
-            stdout: true
-
-- if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! dotnet --version
-    met:
-      - shell:
-          - command: bash shell/dotnet.sh
-            stderr: true
-            stdout: true
-
-- if:
-    cond: echo "$OSTYPE" | grep linux && test "$REMOTE_CONTAINERS" != true && ! terraform --version
-    met:
-      - shell:
-          - command: bash shell/terraform.sh
-            stderr: true
-            stdout: true
+      - create:
+          - ~/git/cal-itp
+          - ~/git/compiler
+          - ~/git/thekaveman
+      - link:
+          ~/git/thekaveman/.gitconfig: git/thekaveman.gitconfig
+          ~/.vimrc:
+      - if:
+          cond: brew --version
+          unmet:
+            - shell:
+                - command: bash tools/brew.sh
+      - if:
+          cond: python --version || python3 --version
+          unmet:
+            - shell:
+                - command: bash tools/python.sh
+      - if:
+          cond: docker --version
+          unmet:
+            - shell:
+                - command: bash tools/docker.sh
+            - if:
+                cond: echo "$OSTYPE" | grep darwin
+                met:
+                  - shell:
+                      - command: mkdir -p ~/.docker
+                  - link:
+                      ~/.docker/config.json: docker/config.osx.json
+      - if:
+          cond: dotnet --version
+          unmet:
+            - shell:
+                - command: bash tools/dotnet.sh
+      - if:
+          cond: gcloud --version
+          unmet:
+            - shell:
+                - command: bash tools/gcloud.sh
+      - if:
+          cond: terraform --version
+          unmet:
+            - shell:
+                - command: bash tools/terraform.sh
+      - if:
+          cond: code -v
+          unmet:
+            - shell:
+                - command: bash tools/vscode.sh
 
 - if:
     cond: code -v
     met:
+      - if:
+          cond: echo "$OSTYPE" | grep linux
+          met:
+            - link:
+                ~/.config/Code/User/settings.json: vscode/settings.json
+      - if:
+          cond: echo "$OSTYPE" | grep darwin
+          met:
+            - link:
+                "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
       - shell:
           - command: bash vscode/install-extensions.sh
-            stderr: true
-            stdout: true
