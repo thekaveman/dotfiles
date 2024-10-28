@@ -12,7 +12,7 @@ elif [[ "$OSTYPE" =~ "linux" ]]; then
       "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
       "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
       sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt update && sudo apt install -qq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo apt update && sudo apt install -yqq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     # Post-install https://docs.docker.com/engine/install/linux-postinstall/
     sudo groupadd docker
     sudo usermod -aG docker $USER
