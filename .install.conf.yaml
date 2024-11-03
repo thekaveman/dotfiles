@@ -82,17 +82,18 @@
                 - command: bash tools/vscode.sh
 
 - if:
+    cond: echo "$OSTYPE" | grep linux
+    met:
+      - link:
+          ~/.config/Code/User/settings.json: vscode/settings.json
+- if:
+    cond: echo "$OSTYPE" | grep darwin
+    met:
+      - link:
+          "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
+
+- if:
     cond: code -v
     met:
-      - if:
-          cond: echo "$OSTYPE" | grep linux
-          met:
-            - link:
-                ~/.config/Code/User/settings.json: vscode/settings.json
-      - if:
-          cond: echo "$OSTYPE" | grep darwin
-          met:
-            - link:
-                "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
       - shell:
           - command: bash vscode/install-extensions.sh
