@@ -1,7 +1,7 @@
 #! /bin/bash
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
-    brew install docker docker-compose colima
+    brew install docker docker-buildx docker-compose colima
     brew services start colima
 elif [[ "$OSTYPE" =~ "linux" ]]; then
     sudo install -m 0755 -d /etc/apt/keyrings
