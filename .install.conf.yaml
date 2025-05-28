@@ -61,6 +61,11 @@
                   - link:
                       ~/.docker/config.json: docker/config.osx.json
       - if:
+          cond: aws --version
+          unmet:
+            - shell:
+                - command: bash tools/aws.sh
+      - if:
           cond: az version
           unmet:
             - shell:
