@@ -39,6 +39,11 @@
           ~/git/thekaveman/.gitconfig: git/thekaveman.gitconfig
           ~/.vimrc:
       - if:
+          cond: echo "$OSTYPE" | grep linux
+          met:
+            - shell:
+                - command: bash tools/linux-prereq.sh
+      - if:
           cond: brew --version
           unmet:
             - shell:

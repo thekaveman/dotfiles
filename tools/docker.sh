@@ -4,7 +4,6 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
     brew install docker docker-compose colima
     brew services start colima
 elif [[ "$OSTYPE" =~ "linux" ]]; then
-    sudo apt update && sudo apt install -qq ca-certificates curl gnupg
     sudo install -m 0755 -d /etc/apt/keyrings
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     sudo chmod a+r /etc/apt/keyrings/docker.gpg
