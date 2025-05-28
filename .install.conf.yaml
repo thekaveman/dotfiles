@@ -61,6 +61,11 @@
                   - link:
                       ~/.docker/config.json: docker/config.osx.json
       - if:
+          cond: az version
+          unmet:
+            - shell:
+                - command: bash tools/azure.sh
+      - if:
           cond: dotnet --version
           unmet:
             - shell:
