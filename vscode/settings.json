@@ -23,6 +23,10 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "gitlens.launchpad.indicator.enabled": false,
+  "github.copilot.enable": {
+    "*": false
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "jupyter.askForKernelRestart": false,
   "[liquid]": {
@@ -30,6 +34,7 @@
     "editor.formatOnSave": true
   },
   "python.analysis.diagnosticMode": "workspace",
+  "python.createEnvironment.trigger": "off",
   "python.experiments.optOutFrom": ["pythonTestAdapter"],
   "python.languageServer": "Pylance",
   "[python]": {
