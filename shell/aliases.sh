@@ -41,3 +41,5 @@ alias tarx='tar xzvf'
 alias tf='terraform'
 
 alias vimp='vim -p'
+
+alias vpn='nordvpn'
