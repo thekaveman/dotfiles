@@ -11,6 +11,7 @@
     rbi = rebase -i
     reword = commit --amend
     save = commit -a -m "save"
+    tags = !git tag | head
     unstage = restore --staged
     update-submodules = submodule update --init --recursive
     upgrade-submodules = submodule update --init --remote
@@ -53,6 +54,9 @@
 
 [rebase]
     autoStash = true
+
+[tag]
+    sort = -taggerdate
 
 # Allow local customizations in the .gitconfig_local file
 [include]
