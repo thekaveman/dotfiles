@@ -8,7 +8,7 @@ elif [ -f "/etc/profile.d/git-prompt.sh" ]; then
 else
     TARGET="$HOME/.git-sh-prompt"
     if [ ! -f "$TARGET" ]; then
-        curl -o "$TARGET" https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion/git-prompt.sh
+        curl -o "$TARGET" https://raw.githubusercontent.com/git/git/fbcdfab34852329929e6bfdd2bac8e49f2e3d8e3/contrib/completion/git-prompt.sh
     fi
     source "$TARGET"
 fi
